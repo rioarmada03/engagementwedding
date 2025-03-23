@@ -28,16 +28,18 @@
             display: block;
             position: relative;
             z-index: 1; /* Pastikan video ada di bawah tombol */
+            object-fit: cover;
+            pointer-events: none; /* Mencegah klik pada video */
         }
 
         /* Tombol di dalam video (bagian bawah tengah) */
         .floating-button {
             position: absolute;
-            bottom: 40px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: pink;
-            color: white;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
             padding: 10px 20px;
             border-radius: 20px;
             text-decoration: none;
@@ -48,12 +50,12 @@
         }
 
         .floating-button:hover {
-            background-color: palevioletred;
+            background-color: rgba(255, 255, 255, 1);
         }
     </style>
     
     <div class="video-container">
-        <video controls autoplay>
+        <video autoplay loop playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
             <source src="video/movie.mp4" type="video/mp4">
             Browser Anda tidak mendukung tag video.
         </video>
